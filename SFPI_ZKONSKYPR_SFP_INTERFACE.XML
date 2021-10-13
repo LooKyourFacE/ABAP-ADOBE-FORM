@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asx:abap version="1.0" xmlns:asx="http://www.sap.com/abapxml">
+	<asx:values>
+		<VERSION>1</VERSION>
+		<TYPE/>
+		<INTERFACE href="#o784"/>
+		<INTERFACET>
+			<FPINTERFACET>
+				<NAME/>
+				<STATE/>
+				<LANGUAGE>E</LANGUAGE>
+				<ID/>
+				<TEXT>ZKONSKYPR_SFP_INTERFACE</TEXT>
+			</FPINTERFACET>
+		</INTERFACET>
+	</asx:values>
+	<asx:heap xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:abap="http://www.sap.com/abapxml/types/built-in" xmlns:cls="http://www.sap.com/abapxml/classes/global" xmlns:dic="http://www.sap.com/abapxml/types/dictionary">
+		<cls:CL_FP_INTERFACE_DATA id="o784">
+			<CL_FP_INTERFACE_DATA classVersion="1">
+				<CODING href="#o779"/>
+				<PARAMETERS href="#o807"/>
+				<GLOBAL_DEFINITIONS href="#o783"/>
+				<REFERENCE_FIELDS href="#o785"/>
+				<XSD_DEFINITIONS/>
+			</CL_FP_INTERFACE_DATA>
+		</cls:CL_FP_INTERFACE_DATA>
+		<cls:CL_FP_REFERENCE_FIELDS id="o785">
+			<CL_FP_INTERFACE_DATA_CHANGED classVersion="1">
+				<INTERFACE_DATA href="#o784"/>
+			</CL_FP_INTERFACE_DATA_CHANGED>
+			<CL_FP_REFERENCE_FIELDS classVersion="1">
+				<REFERENCE_FIELDS/>
+			</CL_FP_REFERENCE_FIELDS>
+		</cls:CL_FP_REFERENCE_FIELDS>
+		<cls:CL_FP_GLOBAL_DEFINITIONS id="o783">
+			<CL_FP_INTERFACE_DATA_CHANGED classVersion="1">
+				<INTERFACE_DATA href="#o784"/>
+			</CL_FP_INTERFACE_DATA_CHANGED>
+			<CL_FP_GLOBAL_DEFINITIONS classVersion="1">
+				<GLOBAL_DATA>
+					<SFPGDATA>
+						<NAME>V_BTYPE</NAME>
+						<TYPING>TYPE</TYPING>
+						<TYPENAME>TDBTYPE</TYPENAME>
+						<DEFAULTVAL>'BCOL'</DEFAULTVAL>
+						<CONSTANT/>
+					</SFPGDATA>
+					<SFPGDATA>
+						<NAME>V_ID</NAME>
+						<TYPING>TYPE</TYPING>
+						<TYPENAME>TDIDGR</TYPENAME>
+						<DEFAULTVAL>'BMAP'</DEFAULTVAL>
+						<CONSTANT/>
+					</SFPGDATA>
+					<SFPGDATA>
+						<NAME>V_OBJECT</NAME>
+						<TYPING>TYPE</TYPING>
+						<TYPENAME>TDOBJECTGR</TYPENAME>
+						<DEFAULTVAL>'GRAPHICS'</DEFAULTVAL>
+						<CONSTANT/>
+					</SFPGDATA>
+					<SFPGDATA>
+						<NAME>V_NAME</NAME>
+						<TYPING>TYPE</TYPING>
+						<TYPENAME>STXBITMAPS-TDNAME</TYPENAME>
+						<DEFAULTVAL>'Z_DELOITTE_LOGO'</DEFAULTVAL>
+						<CONSTANT/>
+					</SFPGDATA>
+					<SFPGDATA>
+						<NAME>G_LOGO</NAME>
+						<TYPING>TYPE</TYPING>
+						<TYPENAME>XSTRING</TYPENAME>
+						<DEFAULTVAL/>
+						<CONSTANT/>
+					</SFPGDATA>
+					<SFPGDATA>
+						<NAME>V_FIELD</NAME>
+						<TYPING>TYPE</TYPING>
+						<TYPENAME>XSTRING</TYPENAME>
+						<DEFAULTVAL/>
+						<CONSTANT/>
+					</SFPGDATA>
+					<SFPGDATA>
+						<NAME>LT_SBOOK</NAME>
+						<TYPING>TYPE</TYPING>
+						<TYPENAME>ZSMART_TT</TYPENAME>
+						<DEFAULTVAL/>
+						<CONSTANT/>
+					</SFPGDATA>
+				</GLOBAL_DATA>
+				<TYPES/>
+				<FIELDSYMBOLS/>
+			</CL_FP_GLOBAL_DEFINITIONS>
+		</cls:CL_FP_GLOBAL_DEFINITIONS>
+		<cls:CL_FP_PARAMETERS id="o807">
+			<CL_FP_INTERFACE_DATA_CHANGED classVersion="1">
+				<INTERFACE_DATA href="#o784"/>
+			</CL_FP_INTERFACE_DATA_CHANGED>
+			<CL_FP_PARAMETERS classVersion="1">
+				<IMPORT_PARAMETERS>
+					<SFPIOPAR>
+						<NAME>LV_HIDE</NAME>
+						<TYPING>TYPE</TYPING>
+						<TYPENAME>CHAR1</TYPENAME>
+						<OPTIONAL/>
+						<BYVALUE/>
+						<DEFAULTVAL/>
+						<STANDARD/>
+						<CONSTANT/>
+					</SFPIOPAR>
+					<SFPIOPAR>
+						<NAME>LV_NAME</NAME>
+						<TYPING>TYPE</TYPING>
+						<TYPENAME>STRING</TYPENAME>
+						<OPTIONAL/>
+						<BYVALUE/>
+						<DEFAULTVAL/>
+						<STANDARD/>
+						<CONSTANT/>
+					</SFPIOPAR>
+					<SFPIOPAR>
+						<NAME>LV_COMPANY</NAME>
+						<TYPING>TYPE</TYPING>
+						<TYPENAME>STRING</TYPENAME>
+						<OPTIONAL/>
+						<BYVALUE/>
+						<DEFAULTVAL/>
+						<STANDARD/>
+						<CONSTANT/>
+					</SFPIOPAR>
+					<SFPIOPAR>
+						<NAME>LV_DATE</NAME>
+						<TYPING>TYPE</TYPING>
+						<TYPENAME>CHAR10</TYPENAME>
+						<OPTIONAL/>
+						<BYVALUE/>
+						<DEFAULTVAL/>
+						<STANDARD/>
+						<CONSTANT/>
+					</SFPIOPAR>
+					<SFPIOPAR>
+						<NAME>LT_SBOOK_NEW</NAME>
+						<TYPING>TYPE</TYPING>
+						<TYPENAME>ZSMART_TT</TYPENAME>
+						<OPTIONAL>X</OPTIONAL>
+						<BYVALUE/>
+						<DEFAULTVAL/>
+						<STANDARD/>
+						<CONSTANT/>
+					</SFPIOPAR>
+				</IMPORT_PARAMETERS>
+				<EXPORT_PARAMETERS/>
+				<TABLE_PARAMETERS/>
+				<EXCEPTIONS/>
+			</CL_FP_PARAMETERS>
+		</cls:CL_FP_PARAMETERS>
+		<cls:CL_FP_CODING id="o779">
+			<CL_FP_INTERFACE_DATA_CHANGED classVersion="1">
+				<INTERFACE_DATA href="#o784"/>
+			</CL_FP_INTERFACE_DATA_CHANGED>
+			<CL_FP_CODING classVersion="1">
+				<INPUT_PARAMETERS/>
+				<OUTPUT_PARAMETERS/>
+				<INITIALIZATION>
+					<FPCLINE>* Call method get_bds_graphic_as_bmp to retrieve z_logo. Note that v_field and g_logo</FPCLINE>
+					<FPCLINE>* MUST be typed as XSTRING NOT string or the conversion of the form from SE78 will</FPCLINE>
+					<FPCLINE>* not work and the logo will NOT display on the Adobe form. On the layout tab of the</FPCLINE>
+					<FPCLINE>* Adobe form, bind z_logo to the graphics node created here in the Interface, NOT</FPCLINE>
+					<FPCLINE>* directly to g_logo. Adobe sees g_logo as a text field.</FPCLINE>
+					<FPCLINE>CALL METHOD cl_ssf_xsf_utilities=&gt;get_bds_graphic_as_bmp</FPCLINE>
+					<FPCLINE>EXPORTING</FPCLINE>
+					<FPCLINE>p_object = v_object " ‘GRAPHICS’</FPCLINE>
+					<FPCLINE>p_name = v_name " Name of the SE78 logo inside Quotes</FPCLINE>
+					<FPCLINE>p_id = v_id " ‘BMAP’</FPCLINE>
+					<FPCLINE>p_btype = v_btype " ‘BCOL’ for color, ‘BMON’ for Black &amp; White</FPCLINE>
+					<FPCLINE>RECEIVING</FPCLINE>
+					<FPCLINE>p_bmp = v_field " v_field and g_logo must be typed xstring</FPCLINE>
+					<FPCLINE>EXCEPTIONS</FPCLINE>
+					<FPCLINE>not_found = 1</FPCLINE>
+					<FPCLINE>internal_error = 2</FPCLINE>
+					<FPCLINE>OTHERS = 3.</FPCLINE>
+					<FPCLINE>g_logo = v_field. " g_logo and v_field must be typed xstring</FPCLINE>
+					<FPCLINE/>
+					<FPCLINE>*APPEND LINES OF lt_sbook_new TO lt_sbook.</FPCLINE>
+					<FPCLINE/>
+					<FPCLINE>*SELECT scarr~CARRID sbook~BOOKID sbook~PASSNAME</FPCLINE>
+					<FPCLINE>* FROM scarr INNER JOIN sbook ON scarr~carrid = sbook~carrid</FPCLINE>
+					<FPCLINE>* INTO TABLE it_sbooks</FPCLINE>
+					<FPCLINE>* UP TO 100 ROWS.</FPCLINE>
+				</INITIALIZATION>
+				<FORMS/>
+			</CL_FP_CODING>
+		</cls:CL_FP_CODING>
+	</asx:heap>
+</asx:abap>
