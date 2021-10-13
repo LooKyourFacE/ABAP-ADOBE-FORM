@@ -1,0 +1,93 @@
+*&---------------------------------------------------------------------*
+*& Report ZKONSKYPR_ADOBE_FORM
+*&---------------------------------------------------------------------*
+*& Author: Konstantinos Kyprianidis
+*& Date: 13/10/2021
+*& Adobe Form Test
+*&---------------------------------------------------------------------*
+REPORT zkonskypr_adobe_form.
+
+DATA: fm_name         TYPE rs38l_fnam,
+      fp_docparams    TYPE sfpdocparams,
+      fp_outputparams TYPE sfpoutputparams,
+      it_sbooks       TYPE STANDARD TABLE OF zsmart_st.
+
+DATA: dyn_name     TYPE string VALUE 'Konstantinos Kyprianidis',
+      dyn_comp     TYPE string VALUE 'ABAP programmer',
+      dyn_date(10) TYPE c.
+
+SELECTION-SCREEN: BEGIN OF LINE.
+  SELECTION-SCREEN COMMENT (25) TEXT-001 FOR FIELD p_hide.
+  SELECTION-SCREEN POSITION 26.
+  PARAMETERS: p_hide AS CHECKBOX DEFAULT 'X'.
+SELECTION-SCREEN: END OF LINE.
+
+START-OF-SELECTION.
+
+  CALL FUNCTION 'CONVERSION_EXIT_PDATE_OUTPUT'
+    EXPORTING
+      input  = sy-datum
+    IMPORTING
+      output = dyn_date.
+
+* Sets the output parameters and opens the spool job
+  CALL FUNCTION 'FP_JOB_OPEN'
+    CHANGING
+      ie_outputparams = fp_outputparams
+    EXCEPTIONS
+      cancel          = 1
+      usage_error     = 2
+      system_error    = 3
+      internal_error  = 4
+      OTHERS          = 5.
+  IF sy-subrc <> 0.
+* <error handling>
+  ENDIF.
+
+* Get the name of the generated function module
+  CALL FUNCTION 'FP_FUNCTION_MODULE_NAME'
+    EXPORTING
+      i_name     = 'ZKONSKYPR_SFP_FORM'
+    IMPORTING
+      e_funcname = fm_name.
+  IF sy-subrc <> 0.
+*  <error handling>
+  ENDIF.
+
+  SELECT scarr~carrid sbook~bookid sbook~passname
+    FROM scarr INNER JOIN sbook ON scarr~carrid = sbook~carrid
+    INTO TABLE it_sbooks
+    UP TO 100 ROWS.
+
+  CALL FUNCTION fm_name
+    EXPORTING
+*     /1BCDWB/DOCPARAMS        =
+      lv_hide        = p_hide
+      lv_name        = dyn_name
+      lv_company     = dyn_comp
+      lv_date        = dyn_date
+      lt_sbook_new   = it_sbooks
+* IMPORTING
+*     /1BCDWB/FORMOUTPUT       =
+    EXCEPTIONS
+      usage_error    = 1
+      system_error   = 2
+      internal_error = 3
+      OTHERS         = 4.
+  IF sy-subrc <> 0.
+* Implement suitable error handling here
+  ENDIF.
+
+
+* Close the spool job
+  CALL FUNCTION 'FP_JOB_CLOSE'
+*    IMPORTING
+*     E_RESULT             =
+    EXCEPTIONS
+      usage_error    = 1
+      system_error   = 2
+      internal_error = 3
+      OTHERS         = 4.
+  IF sy-subrc <> 0.
+*  <error handling>
+  ENDIF.
